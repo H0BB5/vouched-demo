@@ -1,7 +1,7 @@
 //import "https://static.stage.vouched.id/widget/vouched-2.0.0.js";
 
 const config = {
-  appId: process.env.VOUCHED_API_KEY,
+  appId: process.env.REACT_APP_VOUCHED_API_KEY,
 
   // your webhook for POST verification processing
   callbackURL: "https://www.vouched.id/",
@@ -106,7 +106,7 @@ const loadVouched = () => {
   const existingScript = document.getElementById("vouched");
   if (!existingScript) {
     const script = document.createElement("script");
-    script.src = `https://static.vouched.id/widget/vouched-2.0.0.js`;
+    script.src = process.env.REACT_APP_API_URL;
     script.id = "vouched";
     script.async = true;
     document.head.appendChild(script);

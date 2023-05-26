@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import { useEffect } from "react";
 import loadVouched from "./vouched-script";
 import "./App.css";
-import { Button } from "@mui/material";
+import { Button, TextField, Input, Box } from "@mui/material";
 
 function App() {
   useEffect(() => {
@@ -16,7 +16,15 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Button>This is an MUI Button</Button>
+        <Box sx={{ marginTop: "1rem" }}>
+          <Button>This is a default MUI Button</Button>
+        </Box>
+        <Box sx={{ marginTop: "1rem" }}>
+          <TextField label="This is an MUI TextField" />
+        </Box>
+        <Box sx={{ marginTop: "1rem" }}>
+          <Input placeholder="This is an MUI Input" />
+        </Box>
       </header>
       <div id="vouched-element" style={{ height: "100%" }}></div>;
     </div>

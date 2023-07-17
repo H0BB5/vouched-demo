@@ -1,8 +1,8 @@
-//import "https://static.stage.vouched.id/widget/vouched-2.0.0.js";
+import "https://static.stage.vouched.id/widget/vouched-2.0.0.js";
 
 const config = {
-  appId: process.env.REACT_APP_VOUCHED_API_KEY,
-
+  appId: "YuwkUm_#joH#3zL9wqcqT3n1Kr-J.2",
+  enableWhiteLabelPolicies: true,
   // your webhook for POST verification processing
   callbackURL: "https://www.vouched.id/",
 
@@ -18,7 +18,8 @@ const config = {
   crossDevice: true,
   crossDeviceQRCode: true,
   crossDeviceSMS: true,
-
+  includeBackId: true,
+  includeBarcode: true,
   // have the user confirm information
   userConfirmation: {
     confirmData: true,
@@ -79,10 +80,11 @@ const config = {
   onConfirm: (userConfirmEvent) => {
     console.log("user confirmation");
   },
-
+  sandbox: false,
   // theme
   theme: {
     name: "avant",
+    //bgColor: "black",
     // iconLabelColor: "red",
     // logo: {
     //   src: "https://www.vouched.id/wp-content/uploads/2020/11/vouched_logo_hi_res.png",
@@ -102,11 +104,11 @@ const config = {
   },
 };
 
-const loadVouched = () => {
+export const loadVouched = () => {
   const existingScript = document.getElementById("vouched");
   if (!existingScript) {
     const script = document.createElement("script");
-    script.src = process.env.REACT_APP_API_URL;
+    script.src = "https://verify.stage.vouched.id/";
     script.id = "vouched";
     script.async = true;
     document.head.appendChild(script);
@@ -117,5 +119,3 @@ const loadVouched = () => {
     };
   }
 };
-
-export default loadVouched;

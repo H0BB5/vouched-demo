@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import { useEffect, useRef, useState } from "react";
-import { loadVouched } from "./vouched-script";
+import loadVouched from "./vouched-script";
 import "./App.css";
 import { Button, TextField, Input, Box } from "@mui/material";
 
@@ -135,7 +135,7 @@ function App() {
           <Input placeholder="This is an MUI Input" />
         </Box>
       </header>
-      <div id="vouched-element" style={{ height: "100%" }}></div>;
+      <div id="vouched-element" style={{ height: "100%" }}></div>
     </div>
   );
 }

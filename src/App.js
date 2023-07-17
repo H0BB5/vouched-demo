@@ -16,10 +16,12 @@ function App() {
 
   useEffect(() => {
     if (navigator.mediaDevices) {
-      navigator.mediaDevices
+      navigator.mediaDevices.getUserMedia({video:true}).then(()=>{
+        navigator.mediaDevices
         .enumerateDevices()
         .then(gotDevices)
         .catch(handleError);
+      });
     }
     start();
   }, []);
